@@ -16,7 +16,7 @@ const input = document.getElementById('name');
 
 input.addEventListener('change', (e) => {
   [...textElements].forEach((element) => {
-    element.innerHTML = `<tspan x="48%" dy="0">The</tspan>
+    element.innerHTML = `<tspan x="48%" dy="-1em">The</tspan>
     <tspan x="50%" dy="1.2em">${e.target.value}</tspan>
     <tspan x="51%" dy="1.2em">Family</tspan>`;
     console.log(e.target);
