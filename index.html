@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <svg height="50vh" width="100vw">
+      <text
+        x="50%"
+        y="50%"
+        text-anchor="middle"
+        font-family="Helvetica"
+        fill="white"
+        id="wordFeild"
+        stroke-width="0.7em"
+        stroke="white"
+        stroke-linejoin="round"
+        class="text"
+        style="
+          filter: drop-shadow(#493123 1px 1px 0px) drop-shadow(#493123 3px 3px 1px)
+            drop-shadow(rgb(0, 0, 0) 4px 4px 2px) drop-shadow(rgba(0, 0, 0, 0.36) 4px 4px 10px);
+        "
+      >
+        hello world
+      </text>
+      <defs>
+        <mask id="mask" x="0" y="0" height="100vh" width="100vw">
+          <rect x="0" y="0" height="100%" width="100%" />
+          <text
+            x="50%"
+            y="50%"
+            text-anchor="middle"
+            font-family="Helvetica"
+            fill="white"
+            id="wordFeild"
+            stroke-width="0.7em"
+            stroke="white"
+            class="text"
+            stroke-linejoin="round"
+          >
+            hello world
+          </text>
+        </mask>
+      </defs>
+
+      <image
+        x="30%"
+        y="-10%"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="wood.jpg"
+        mask="url(#mask)"
+        id="material"
+        width="100%"
+      ></image>
+
+      <text
+        x="50%"
+        y="50%"
+        text-anchor="middle"
+        fill="black"
+        font-family="Helvetica"
+        class="text"
+        style="
+          filter: drop-shadow(#c5c5c5 1px 1px 0px) drop-shadow(#c5c5c5 2px 2px 1px)
+            drop-shadow(rgb(0, 0, 0) 2px 2px 5px) drop-shadow(rgb(0, 0, 0) 2px 2px 2px);
+        "
+      >
+        hello world
+      </text>
+
+      <text
+        class="text"
+        x="50%"
+        y="50%"
+        text-anchor="middle"
+        fill="#fff"
+        font-family="Helvetica"
+        id="words"
+      >
+        hello world
+      </text>
+    </svg>
+    <div style="text-align: center;">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Name here"
+        style="
+          width: 20em;
+          border-radius: 9000px;
+          border: solid black 1px;
+          padding: 5px 20px;
+          font-size: 2em;
+        "
+      />
+      <div style="margin-top: 50px;">
+        <button class="woodSelect" value="wood.jpg"></button>
+        <button class="woodSelect" value="wood2.jpg"></button>
+        <button class="woodSelect" value="wood3.jpg"></button>
+        <button class="woodSelect" value="wood4.jpg"></button>
+      </div>
+    </div>
+  </body>
+</html>
