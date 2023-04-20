@@ -35,9 +35,9 @@
             <feImage
               xmlns:xlink="http://www.w3.org/1999/xlink"
               xlink:href="texture1.jpg"
-              width="30rem"
+              width="25rem"
               id="material"
-              height="30rem"
+              height="25rem"
               result="texture"
             ></feImage>
             <feTile in="texture" x="0" y="0" width="100%" height="100%" />
@@ -73,16 +73,30 @@
           font-size: 2em;
         "
       />
-      <div style="margin-top: 50px;">
+      <div
+        style="
+          margin-top: 50px;
+          display: flex;
+          width: 100vw;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 0.5em;
+        "
+      >
         <button class="woodSelect" value="texture1.jpg"></button>
         <button class="woodSelect" value="texture2.jpg"></button>
         <button class="woodSelect" value="texture3.jpg"></button>
         <button class="woodSelect" value="texture4.jpg"></button>
+        <button class="woodSelect" value="texture5.jpg"></button>
+        <button class="woodSelect" value="texture6.jpg"></button>
+        <button class="woodSelect" value="texture7.jpg"></button>
+        <button class="woodSelect" value="texture8.jpg"></button>
+        <button class="woodSelect" value="texture9.jpg"></button>
       </div>
 
       <div>
         <input
-          style="margin-top: 20px; width: 35em;"
+          style="margin-top: 20px; width: 80vw;"
           type="range"
           name="width"
           min="0"
@@ -96,7 +110,7 @@
         style="
           display: flex;
           flex-wrap: wrap;
-          width: 35em;
+          width: 100vw;
           justify-content: center;
           margin: auto;
           gap: 0.5em;
