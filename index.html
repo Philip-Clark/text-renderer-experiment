@@ -10,7 +10,7 @@
   </head>
   <body style="text-align: center;">
     <div id="visualizer">
-      <svg height="60vh" width="60vw" id="main">
+      <svg height="60vh" width="100vw" id="main">
         <!-- Wood background Mask -->
         <defs>
           <mask id="mask" x="-0%" y="-0%" height="50rem" width="50rem">
@@ -34,10 +34,10 @@
           <filter id="tile" x="0" y="0" width="100%" height="100%">
             <feImage
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="texture5.jpg"
-              width="15rem"
+              xlink:href="texture1.jpg"
+              width="30rem"
               id="material"
-              height="15rem"
+              height="30rem"
               result="texture"
             ></feImage>
             <feTile in="texture" x="0" y="0" width="100%" height="100%" />
@@ -47,7 +47,7 @@
           x="0%"
           y="0%"
           xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="texture3.jpg"
+          xlink:href="texture1.jpg"
           mask="url(#mask)"
           style="filter: url(#tile);"
           width="100%"
@@ -86,7 +86,7 @@
           type="range"
           name="width"
           min="0"
-          max="10"
+          max="20"
           id="backWidth"
           value="3"
         />

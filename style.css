@@ -16,8 +16,6 @@ body {
   width: 100vw;
   padding: 0 0 50vh 0;
   background-color: #27292d;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }

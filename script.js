@@ -26,9 +26,9 @@ const cameraAngle = { x: 1, y: 1 };
 
 input.addEventListener('change', (e) => {
   [...textElements].forEach((element) => {
-    element.innerHTML = `<tspan x="40%" dy="-1em">The</tspan>
+    element.innerHTML = `<tspan x="45%" dy="-1em">The</tspan>
     <tspan x="50%" dy="1.2em">${e.target.value}</tspan>
-    <tspan x="60%" dy="1.2em">Family</tspan>`;
+    <tspan x="55%" dy="1.2em">Family</tspan>`;
     console.log(e.target);
   });
 });
