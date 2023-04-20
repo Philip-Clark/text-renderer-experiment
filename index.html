@@ -9,83 +9,55 @@
     <title>Document</title>
   </head>
   <body style="text-align: center;">
-    <svg height="30em" width="80em">
-      <text
-        x="50%"
-        y="50%"
-        text-anchor="middle"
-        font-family="Helvetica"
-        fill="white"
-        id="wordFeild"
-        stroke-width="0.7em"
-        stroke="white"
-        stroke-linejoin="round"
-        class="text"
-        style="
-          filter: drop-shadow(#493123 1px 1px 0px) drop-shadow(#493123 3px 3px 1px)
-            drop-shadow(rgb(0, 0, 0) 4px 4px 2px) drop-shadow(rgba(0, 0, 0, 0.36) 4px 4px 10px);
-        "
-      >
-        hello world
-      </text>
-      <defs>
-        <mask id="mask" x="0" y="0" height="100vh" width="100vw">
-          <rect x="0" y="0" height="100%" width="100%" />
-          <text
-            x="50%"
-            y="50%"
-            text-anchor="middle"
-            font-family="Helvetica"
-            fill="white"
-            id="wordFeild"
-            stroke-width="0.7em"
-            stroke="white"
-            class="text"
-            stroke-linejoin="round"
-          >
-            hello world
-          </text>
-        </mask>
-      </defs>
+    <div id="visualizer">
+      <svg height="60vh" width="60vw" id="main">
+        <!-- Wood background Mask -->
+        <defs>
+          <mask id="mask" x="-0%" y="-0%" height="50rem" width="50rem">
+            <text
+              x="50%"
+              y="50%"
+              text-anchor="middle"
+              stroke-width="0.3em"
+              stroke="white"
+              fill="white"
+              id="wood"
+              class="text shadow"
+              stroke-linejoin="round"
+            >
+              hello world
+            </text>
+          </mask>
+        </defs>
 
-      <image
-        x="20%"
-        y="-24%"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xlink:href="wood.jpg"
-        id="material"
-        width="50em"
-        mask="url(#mask)"
-        height="50em"
-      ></image>
+        <defs>
+          <filter id="tile" x="0" y="0" width="100%" height="100%">
+            <feImage
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="texture5.jpg"
+              width="15rem"
+              id="material"
+              height="15rem"
+              result="texture"
+            ></feImage>
+            <feTile in="texture" x="0" y="0" width="100%" height="100%" />
+          </filter>
+        </defs>
+        <image
+          x="0%"
+          y="0%"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="texture3.jpg"
+          mask="url(#mask)"
+          style="filter: url(#tile);"
+          width="100%"
+        ></image>
+        <text x="50%" y="50%" text-anchor="middle" fill="white" class="text shadow" id="words">
+          hello world
+        </text>
+      </svg>
+    </div>
 
-      <text
-        x="50%"
-        y="50%"
-        text-anchor="middle"
-        fill="black"
-        font-family="Helvetica"
-        class="text"
-        style="
-          filter: drop-shadow(#c5c5c5 1px 1px 0px) drop-shadow(#c5c5c5 2px 2px 1px)
-            drop-shadow(rgb(0, 0, 0) 2px 2px 5px) drop-shadow(rgb(0, 0, 0) 2px 2px 2px);
-        "
-      >
-        hello world
-      </text>
-
-      <text
-        class="text"
-        x="50%"
-        y="50%"
-        text-anchor="middle"
-        fill="#fff"
-        font-family="Helvetica"
-        id="words"
-      >
-        hello world
-      </text>
-    </svg>
     <div style="text-align: center;">
       <input
         type="text"
@@ -102,10 +74,54 @@
         "
       />
       <div style="margin-top: 50px;">
-        <button class="woodSelect" value="wood.jpg"></button>
-        <button class="woodSelect" value="wood2.jpg"></button>
-        <button class="woodSelect" value="wood3.jpg"></button>
-        <button class="woodSelect" value="wood4.jpg"></button>
+        <button class="woodSelect" value="texture1.jpg"></button>
+        <button class="woodSelect" value="texture2.jpg"></button>
+        <button class="woodSelect" value="texture3.jpg"></button>
+        <button class="woodSelect" value="texture4.jpg"></button>
+      </div>
+
+      <div>
+        <input
+          style="margin-top: 20px; width: 35em;"
+          type="range"
+          name="width"
+          min="0"
+          max="10"
+          id="backWidth"
+          value="3"
+        />
+      </div>
+
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          width: 35em;
+          justify-content: center;
+          margin: auto;
+          gap: 0.5em;
+          padding-top: 50px;
+        "
+      >
+        <button class="fontSelect" style="font-family: 'Handlee', cursive;" value="Handlee">
+          Handlee
+        </button>
+        <button class="fontSelect" style="font-family: 'Courgette', cursive;" value="Courgette">
+          Courgette
+        </button>
+        <button
+          class="fontSelect"
+          style="font-family: 'Dancing Script', cursive;"
+          value="Dancing Script"
+        >
+          Dancing Script
+        </button>
+        <button class="fontSelect" style="font-family: 'Great Vibes', cursive;" value="Great Vibes">
+          Great Vibes
+        </button>
+        <button class="fontSelect" style="font-family: 'Roboto', sans-serif;" value="Roboto">
+          Roboto
+        </button>
       </div>
     </div>
   </body>
