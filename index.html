@@ -8,62 +8,16 @@
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body style="text-align: center;">
-    <div id="visualizer">
-      <svg height="60vh" width="100vw" id="main">
-        <!-- Wood background Mask -->
-        <defs>
-          <mask id="mask" x="-0%" y="-0%" height="50rem" width="50rem">
-            <text
-              x="50%"
-              y="50%"
-              text-anchor="middle"
-              stroke-width="0.3em"
-              stroke="white"
-              fill="white"
-              id="wood"
-              class="text shadow"
-              stroke-linejoin="round"
-            >
-              hello world
-            </text>
-          </mask>
-        </defs>
+  <body>
+    <div id="visualizer" style="height: 500px; width: 500px;"></div>
 
-        <defs>
-          <filter id="tile" x="0" y="0" width="100%" height="100%">
-            <feImage
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="texture1.jpg"
-              width="25rem"
-              id="material"
-              height="25rem"
-              result="texture"
-            ></feImage>
-            <feTile in="texture" x="0" y="0" width="100%" height="100%" />
-          </filter>
-        </defs>
-        <image
-          x="0%"
-          y="0%"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="texture1.jpg"
-          mask="url(#mask)"
-          style="filter: url(#tile);"
-          width="100%"
-        ></image>
-        <text x="50%" y="50%" text-anchor="middle" fill="white" class="text shadow" id="words">
-          hello world
-        </text>
-      </svg>
-    </div>
-
-    <div style="text-align: center;">
+    <form method="GET" id="form">
       <input
         type="text"
         name="name"
-        id="name"
+        id="text"
         placeholder="Name here"
+        value="Default"
         style="
           max-width: 20em;
           width: 100vw;
@@ -73,70 +27,36 @@
           font-size: 2em;
         "
       />
-      <div
-        style="
-          margin-top: 50px;
-          display: flex;
-          width: 100vw;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 0.5em;
-        "
-      >
-        <button class="woodSelect" value="texture1.jpg"></button>
-        <button class="woodSelect" value="texture2.jpg"></button>
-        <button class="woodSelect" value="texture3.jpg"></button>
-        <button class="woodSelect" value="texture4.jpg"></button>
-        <button class="woodSelect" value="texture5.jpg"></button>
-        <button class="woodSelect" value="texture6.jpg"></button>
-        <button class="woodSelect" value="texture7.jpg"></button>
-        <button class="woodSelect" value="texture8.jpg"></button>
-        <button class="woodSelect" value="texture9.jpg"></button>
-      </div>
 
-      <div>
+      <label>
+        Back board padding
         <input
-          style="margin-top: 20px; width: 80vw;"
+          style="margin-top: 20px; width: 30vw;"
           type="range"
           name="width"
           min="0"
-          max="20"
-          id="backWidth"
-          value="3"
+          max="60"
+          id="offset"
+          value="20"
         />
-      </div>
+      </label>
 
-      <div
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          width: 100vw;
-          justify-content: center;
-          margin: auto;
-          gap: 0.5em;
-          padding-top: 50px;
-        "
-      >
-        <button class="fontSelect" style="font-family: 'Handlee', cursive;" value="Handlee">
-          Handlee
-        </button>
-        <button class="fontSelect" style="font-family: 'Courgette', cursive;" value="Courgette">
-          Courgette
-        </button>
-        <button
-          class="fontSelect"
-          style="font-family: 'Dancing Script', cursive;"
-          value="Dancing Script"
-        >
-          Dancing Script
-        </button>
-        <button class="fontSelect" style="font-family: 'Great Vibes', cursive;" value="Great Vibes">
-          Great Vibes
-        </button>
-        <button class="fontSelect" style="font-family: 'Roboto', sans-serif;" value="Roboto">
-          Roboto
-        </button>
-      </div>
-    </div>
+      <label for="color"
+        >Text color
+        <input type="color" name="color" id="color" value="#ffffff" />
+      </label>
+
+      <label for="url">
+        Wood texture url
+        <input
+          type="url"
+          name="url"
+          id="wood"
+          value="https://th.bing.com/th/id/OIP.IHewWcp0eR9crdv9XwT_SQHaHa?pid=ImgDet&rs=1"
+        />
+      </label>
+
+      <button id="update" type="submit">Update</button>
+    </form>
   </body>
 </html>
