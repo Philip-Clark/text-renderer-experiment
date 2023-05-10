@@ -5,7 +5,7 @@ const color = document.getElementById('color');
 const wood = document.getElementById('wood');
 const visualizer = document.getElementById('visualizer');
 
-const apiEndPoint = 'http://192.168.1.85:5000/api/preview/';
+const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/preview/';
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
