@@ -26,3 +26,14 @@ button {
   width: fit-content;
   padding: 1em 2em;
 }
+
+#loading {
+  text-align: left;
+  width: 100%;
+  transition: all 0.1s ease;
+}
+
+.woodSelect {
+  width: 100px;
+  height: 100px;
+}

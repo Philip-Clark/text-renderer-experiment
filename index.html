@@ -10,6 +10,7 @@
   </head>
   <body>
     <div id="visualizer" style="height: 500px; width: 500px;"></div>
+    <p id="loading">Loading...</p>
 
     <form method="GET" id="form">
       <input
@@ -47,16 +48,56 @@
       </label>
 
       <label for="url">
-        Wood texture url
-        <input
-          type="url"
-          name="url"
-          id="wood"
-          value="https://th.bing.com/th/id/OIP.IHewWcp0eR9crdv9XwT_SQHaHa?pid=ImgDet&rs=1"
-        />
-      </label>
+        Wood texture
 
-      <button id="update" type="submit">Update</button>
+        <div style="display: flex; justify-content: left; flex-wrap: wrap; gap: 0.2em;">
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://www.furniturebrands4u.co.uk/image/catalog/ercol/2020-wood-shades/straw-st.jpg"
+          ></button>
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://th.bing.com/th/id/OIP.Himx-U5znlNfa3AWVjwRXAAAAA?pid=ImgDet&w=250&h=250&rs=1"
+          ></button>
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://th.bing.com/th/id/R.487d94991af103bb9821cece957a8107?rik=GpFoAoBK5nYozA&riu=http%3a%2f%2fwww.hobbithouseinc.com%2fpersonal%2fwoodpics%2foak%2c+english+brown%2foak%2c+english+brown+1+s50+web.jpg&ehk=JU%2fa9SB%2fugi9D4BhBFIvalwmjyZQ2FYkmrQqrSvt3bo%3d&risl=&pid=ImgRaw&r=0"
+          ></button>
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://th.bing.com/th/id/OIP.uT6MdM8nKyV1mpzZF3fDlwHaHa?pid=ImgDet&w=1000&h=1000&rs=1"
+          ></button>
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://57northplank.com/wp-content/uploads/Maple_cropped_colorized-1436x1077.jpg"
+          ></button>
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://th.bing.com/th/id/OIP.6JUt5F2_DrOVPwPh0l9XHgAAAA?pid=ImgDet&w=300&h=300&rs=1"
+          ></button>
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://www.amishfurnishings.com/wp-content/uploads/2016/04/Cherry-Wood-Natural-400x400.jpg"
+          ></button>
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://www.shawandtenney.com/sites/all/themes/shawandtenney/_images/cherry.jpg"
+          ></button>
+          <button
+            class="woodSelect"
+            type="button"
+            value="https://hw.menardc.com/main/items/media/MENZE001/ProductMedium/0-Oak-4001200.jpg"
+          ></button>
+        </div>
+      </label>
     </form>
   </body>
 </html>
