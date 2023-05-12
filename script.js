@@ -21,7 +21,7 @@ const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/preview
 const values = {
   text: 'Default',
   offset: 20,
-  color: '#bf2020',
+  color: '#ffffff',
   wood: 'https://th.bing.com/th/id/OIP.IHewWcp0eR9crdv9XwT_SQHaHa',
 };
 
