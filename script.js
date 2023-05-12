@@ -1,22 +1,25 @@
 const form = document.getElementById('form');
-const text = document.getElementById('text');
+const text = document.getElementById('textInput');
 const offset = document.getElementById('offset');
 const color = document.getElementById('color');
 const visualizer = document.getElementById('visualizer');
 const loadText = document.getElementById('loading');
-
 const woods = document.querySelectorAll('.woodSelect');
+const data = document.getElementById('data');
+
+// const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
+const apiEndPoint = 'http://192.168.1.85:5000/api/';
+
+data.addEventListener('click', () => {});
 
 woods.forEach((button) => {
   button.style.background = `url(${button.value})`;
   button.addEventListener('click', () => {
     values['wood'] = button.value;
-    getSignRender();
+    const backboard = document.getElementById('texture').firstChild;
+    backboard.setAttribute('xlink:href', values.wood);
   });
 });
-
-const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/preview/';
-// const apiEndPoint = 'http://192.168.1.85:5000/api/preview';
 
 const values = {
   text: 'Default',
@@ -25,9 +28,15 @@ const values = {
   wood: 'https://th.bing.com/th/id/OIP.IHewWcp0eR9crdv9XwT_SQHaHa',
 };
 
-[text, offset, color].forEach((input) => {
+color.addEventListener('input', () => {
+  values[color.id] = color.value;
+  const text = document.getElementById('text');
+  text.setAttribute('fill', color.value);
+});
+
+[text, offset].forEach((input) => {
   input.addEventListener('change', () => {
-    values[input.id] = input.value;
+    values[input.name] = input.value;
     getSignRender();
   });
 });
@@ -43,7 +52,7 @@ const getSignRender = async () => {
 
   console.log(query);
 
-  const response = await fetch(apiEndPoint + query.replace('#', ''));
+  const response = await fetch(apiEndPoint + 'preview/' + query.replace('#', ''));
   const jsonData = await response.json();
 
   visualizer.innerHTML = jsonData.sign;
