@@ -7,8 +7,8 @@ const loadText = document.getElementById('loading');
 const woods = document.querySelectorAll('.woodSelect');
 const data = document.getElementById('data');
 
-// const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
-const apiEndPoint = 'http://192.168.1.85:5000/api/';
+const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
+// const apiEndPoint = 'http://192.168.1.85:5000/api/';
 
 data.addEventListener('click', () => {});
 
