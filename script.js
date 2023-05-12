@@ -10,8 +10,6 @@ const data = document.getElementById('data');
 const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
 // const apiEndPoint = 'http://192.168.1.85:5000/api/';
 
-data.addEventListener('click', () => {});
-
 woods.forEach((button) => {
   button.style.background = `url(${button.value})`;
   button.addEventListener('click', () => {
