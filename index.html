@@ -9,7 +9,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="visualizer" style="height: 500px; width: 500px;"></div>
+    <div id="visualizer" style="height: 400px; width: 400px; border: dashed grey 1px;"></div>
     <p id="loading">Loading...</p>
 
     <form method="GET" id="form">
@@ -35,8 +35,8 @@
           style="margin-top: 20px; width: 30vw;"
           type="range"
           name="offset"
-          min="0"
-          max="60"
+          min="20"
+          max="100"
           id="offset"
           value="20"
         />
@@ -45,6 +45,20 @@
       <label for="color"
         >Text color
         <input type="color" name="color" id="color" value="#ffffff" />
+      </label>
+
+      <label for="url">
+        Backboard shape
+
+        <div style="display: flex; justify-content: left; flex-wrap: wrap; gap: 0.2em;">
+          <button class="backboardShape" type="button" value="circular" name="circular">
+            Circular
+          </button>
+          <button class="backboardShape" type="button" value="rectangular" name="rectangular">
+            Rectangular
+          </button>
+          <button class="backboardShape" type="button" value="text" name="text">Text</button>
+        </div>
       </label>
 
       <label for="url">
@@ -99,5 +113,7 @@
         </div>
       </label>
     </form>
+
+    <button id="saveOutline" name="Save Outline">Save Outline</button>
   </body>
 </html>
