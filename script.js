@@ -10,8 +10,8 @@ const backboardShapes = document.querySelectorAll('.backboardShape');
 const data = document.getElementById('data');
 const saveOutline = document.getElementById('saveOutline');
 
-// const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
-const apiEndPoint = 'http://127.0.0.1:5000/api/';
+const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
+// const apiEndPoint = 'http://127.0.0.1:5000/api/';
 const values = {
   text: 'Default',
   offset: 20,
