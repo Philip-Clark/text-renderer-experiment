@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 const text = document.getElementById('textInput');
 const offset = document.getElementById('offset');
 const skew = document.getElementById('skew');
-const color = document.getElementById('color');
+const colors = document.querySelectorAll('.colorSelect');
 const visualizer = document.getElementById('visualizer');
 const loadText = document.getElementById('loading');
 const woods = document.querySelectorAll('.woodSelect');
@@ -12,6 +12,12 @@ const saveOutline = document.getElementById('saveOutline');
 
 // const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
 const apiEndPoint = 'http://127.0.0.1:5000/api/';
+const values = {
+  text: 'Default',
+  offset: 20,
+  color: '#ffffff',
+  wood: 'https://th.bing.com/th/id/OIP.IHewWcp0eR9crdv9XwT_SQHaHa',
+};
 
 woods.forEach((button) => {
   button.style.background = `url(${button.value})`;
@@ -22,24 +28,20 @@ woods.forEach((button) => {
   });
 });
 
+colors.forEach((button) => {
+  button.style.background = `${button.value}`;
+  button.addEventListener('click', () => {
+    values['color'] = button.value;
+    const text = document.getElementById('text');
+    text.setAttribute('fill', button.value);
+  });
+});
+
 backboardShapes.forEach((button) => {
   button.addEventListener('click', () => {
     values['backboardShape'] = button.value;
     getSignRender();
   });
-});
-
-const values = {
-  text: 'Default',
-  offset: 20,
-  color: '#ffffff',
-  wood: 'https://th.bing.com/th/id/OIP.IHewWcp0eR9crdv9XwT_SQHaHa',
-};
-
-color.addEventListener('input', () => {
-  values[color.id] = color.value;
-  const text = document.getElementById('text');
-  text.setAttribute('fill', color.value);
 });
 
 [text, offset, skew].forEach((input) => {
