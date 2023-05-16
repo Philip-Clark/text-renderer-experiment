@@ -1,6 +1,7 @@
 const form = document.getElementById('form');
 const text = document.getElementById('textInput');
 const offset = document.getElementById('offset');
+const skew = document.getElementById('skew');
 const color = document.getElementById('color');
 const visualizer = document.getElementById('visualizer');
 const loadText = document.getElementById('loading');
@@ -9,8 +10,8 @@ const backboardShapes = document.querySelectorAll('.backboardShape');
 const data = document.getElementById('data');
 const saveOutline = document.getElementById('saveOutline');
 
-const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
-// const apiEndPoint = 'http://127.0.0.1:5000/api/';
+// const apiEndPoint = 'https://signrenderapi-production.up.railway.app/api/';
+const apiEndPoint = 'http://127.0.0.1:5000/api/';
 
 woods.forEach((button) => {
   button.style.background = `url(${button.value})`;
@@ -41,7 +42,7 @@ color.addEventListener('input', () => {
   text.setAttribute('fill', color.value);
 });
 
-[text, offset].forEach((input) => {
+[text, offset, skew].forEach((input) => {
   input.addEventListener('change', () => {
     values[input.name] = input.value;
     getSignRender();
